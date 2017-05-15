@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { Text } from 'react-native';
 import firebase from 'firebase';
 import { Button, Card, CardSection, Input, Spinner } from './common';
+import ToastAndroid from '../modules/ToastAndroid';
+
 
 class LoginForm extends Component {
   state = {
@@ -42,7 +44,8 @@ class LoginForm extends Component {
       password: '',
       error: '',
       loading: false
-    })
+    });
+    ToastAndroid.show('Login Successfull', ToastAndroid.SHORT);
   }
 
   renderButton() {
